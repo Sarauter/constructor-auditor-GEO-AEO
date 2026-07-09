@@ -1,0 +1,35 @@
+# Cloudflare Pages project config.
+# The site is a static app (index.html) plus a Pages Function in functions/api/audit.js.
+name = "constructor-auditor-geo-aeo"
+compatibility_date = "2026-07-08"
+pages_build_output_dir = "."
+
+# Optional overrides (all have safe defaults, no secrets).
+# Set real values in the Cloudflare dashboard (Pages → Settings → Variables) for production.
+[vars]
+# --- Audit function ---
+# AUDIT_USER_AGENT = "SarauterGEOAuditBot/1.0 (+https://sarauter.com/constructor-auditor-GEO-AEO)"
+# AUDIT_TIMEOUT_MS = "8000"
+# AUDIT_MAX_BYTES = "1500000"
+# --- Lead capture (/api/lead) ---
+# Email delivery via Resend (recommended). Set RESEND_API_KEY as a SECRET
+# (dashboard → Settings → Variables → Encrypt, or `wrangler pages secret put
+# RESEND_API_KEY`). Never commit the key.
+# LEAD_TO   = "marketing@sarauter.com"        # recipient (this is the default)
+# LEAD_FROM = "GEO Auditor <no-reply@sarauter.com>"  # a sender verified in Resend
+#
+# Alternative/extra delivery: any service that accepts a JSON POST
+# (Slack Incoming Webhook, Make/Zapier/n8n, Google Apps Script, etc.).
+# LEAD_WEBHOOK_URL = "https://hooks.slack.com/services/XXX/YYY/ZZZ"
+
+# --- Team login (/api/unlock) — unlocks the optimizer for you ---
+# Set OPTIMIZER_PASSWORD as a SECRET (never here in plain text):
+#   wrangler pages secret put OPTIMIZER_PASSWORD
+# Optionally require a username too:
+# OPTIMIZER_USER = "sarauter"
+
+# Optionally also persist leads in Workers KV. Create a namespace and bind it
+# as LEADS (uncomment below, or configure it in the Pages dashboard):
+# [[kv_namespaces]]
+# binding = "LEADS"
+# id = "<your-kv-namespace-id>"

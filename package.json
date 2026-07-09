@@ -1,0 +1,13 @@
+{
+  "name": "constructor-auditor-geo-aeo",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Constructor + Auditor de contenido GEO/AEO con auditoría por URL en Cloudflare Pages Functions.",
+  "scripts": {
+    "dev": "wrangler pages dev",
+    "deploy": "wrangler pages deploy"
+  },
+  "devDependencies": {
+    "wrangler": "^4.108.0"
+  }
+}
