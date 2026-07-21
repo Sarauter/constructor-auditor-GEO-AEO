@@ -1,5 +1,7 @@
 # Constructor + Auditor GEO/AEO
 
+LEGACY #1
+
 Herramienta bilingüe (ES/EN) para **auditar** y **construir** contenido optimizado para
 **GEO** (Generative Engine Optimization) y **AEO** (Answer Engine Optimization) — es decir,
 para que motores como ChatGPT, Perplexity y Google AI Overviews **citen tu sitio**.
